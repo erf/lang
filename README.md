@@ -25,10 +25,10 @@ Use `setLang` to change language and `tr` to get translation.
 // set langauge given code
 setLang('en')
 
-// get a translated version given a tag and current code
+// get translation given a tag and current code
 tr('car')
 
-// get translated version given a parameter
+// get translation given a tag and additional parameter
 tr('hi', 'Erlend')
 ```
 
