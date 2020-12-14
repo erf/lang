@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<title>lang - example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="lang.js"></script>
+
+<p id="car">car</p>
+
+<div>
+    <button id="en" title="English">🇺🇸</button>
+    <button id="nb" title="Norwegian">🇳🇴</button>
+</div>
+
+<script>
+
+    const translations = {
+        'en': {
+            'car': 'car',
+        },
+        'nb': {
+            'car': 'bil',
+        },
+    }
+
+    let l = lang(translations)
+
+    function onClickHandler(code) {
+        return (e) => {
+            l.setLang(code)
+            // TODO re-render your app state after l.setLang 
+            document.getElementById('car').innerHTML = l.tr('car')
+        }
+    }
+
+    document.getElementById("en").onclick = onClickHandler("en")
+
+    document.getElementById("nb").onclick = onClickHandler("nb")
+
+</script>
