@@ -6,6 +6,7 @@
 <script src="lang.js"></script>
 
 <p id="car">car</p>
+<p id="hi">hi</p>
 
 <div>
     <button id="en" title="English">🇺🇸</button>
@@ -17,9 +18,11 @@
     const translations = {
         'en': {
             'car': 'car',
+            'hi': 'Hi {}, how are you doing?',
         },
         'nb': {
             'car': 'bil',
+            'hi': 'Hei {}, hvordan går det?',
         },
     }
 
@@ -30,6 +33,7 @@
             l.setLang(code)
             // TODO re-render your app state after l.setLang 
             document.getElementById('car').innerHTML = l.tr('car')
+            document.getElementById('hi').innerHTML = l.tr('hi', 'Erlend')
         }
     }
 
